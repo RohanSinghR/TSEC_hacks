@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:particles_flutter/particles_flutter.dart';
 
@@ -27,6 +29,7 @@ class _LoginState extends State<Login> {
         opac2 = 1.0;
       });
     });
+
     super.initState();
   }
 
@@ -79,6 +82,9 @@ class _LoginState extends State<Login> {
               SizedBox(
                 height: MediaQuery.of(context).size.height / 7,
               ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 50,
+              ),
               Center(
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width / 1.16,
@@ -87,7 +93,7 @@ class _LoginState extends State<Login> {
                     decoration: InputDecoration(
                         helperText: 'Wallet address',
                         hintText: 'Enter wallet address',
-                        errorText: controller1.toString().isEmpty
+                        errorText: controller1.text.isEmpty
                             ? 'Please enter a valid wallet address'
                             : '',
                         errorStyle: TextStyle(color: Colors.red),
@@ -105,19 +111,14 @@ class _LoginState extends State<Login> {
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width / 1.16,
                   child: TextFormField(
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return "This field is required";
-                      }
-                      return null;
-                    },
+                    obscureText: true,
                     enableIMEPersonalizedLearning: true,
                     enableSuggestions: true,
                     controller: controller2,
                     decoration: InputDecoration(
                         hintText: 'Enter wallet key',
                         hintMaxLines: 1,
-                        errorText: controller2.toString().isEmpty
+                        errorText: controller2.text.isEmpty
                             ? 'Please enter a valid wallet key'
                             : '',
                         errorStyle: TextStyle(color: Colors.red),
@@ -134,9 +135,9 @@ class _LoginState extends State<Login> {
               Container(
                 child: ElevatedButton(
                   onPressed: () {
-                    if (controller1.toString().isEmpty) {
+                    if (controller1.text.isEmpty) {
                       return;
-                    } else if (controller2.toString().isEmpty) {
+                    } else if (controller2.text.isEmpty) {
                       return;
                     } else {
                       Navigator.pushReplacement(
@@ -145,11 +146,44 @@ class _LoginState extends State<Login> {
                               builder: (context) => LoginLoader()));
                     }
                   },
-                  child: Text('Validate'),
+                  child: Text(
+                    'Validate',
+                    style: TextStyle(fontSize: 20),
+                  ),
                 ),
                 height: MediaQuery.of(context).size.height / 15,
                 width: MediaQuery.of(context).size.width / 2.7,
-              )
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 10,
+              ),
+              Text(
+                'Supported wallets:',
+                style: TextStyle(
+                    color: Color.fromARGB(255, 149, 166, 235),
+                    fontStyle: FontStyle.italic),
+                textAlign: TextAlign.left,
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 70,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset(
+                    'assets/images/coinbase-inc-seeklogo.com.png',
+                    scale: 8,
+                  ),
+                  Image.asset(
+                    'assets/images/MetaMask_Fox.png',
+                    scale: 8,
+                  ),
+                  Image.asset(
+                    'assets/images/binance-logo.png',
+                    scale: 5,
+                  )
+                ],
+              ),
             ],
           ),
         ],

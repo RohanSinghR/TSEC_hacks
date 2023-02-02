@@ -22,28 +22,28 @@ class _LoginLoaderState extends State<LoginLoader> {
         selected1 = !selected1;
       });
     });
-    Future.delayed(Duration(milliseconds: 1500), () {
+    Future.delayed(Duration(milliseconds: 1400), () {
       setState(() {
         selected1 = !selected1;
       });
     });
 
-    Future.delayed(Duration(milliseconds: 1000), () {
+    Future.delayed(Duration(milliseconds: 800), () {
       setState(() {
         selected2 = !selected2;
       });
     });
-    Future.delayed(Duration(milliseconds: 2000), () {
+    Future.delayed(Duration(milliseconds: 1700), () {
       setState(() {
         selected2 = !selected2;
       });
     });
-    Future.delayed(Duration(milliseconds: 1500), () {
+    Future.delayed(Duration(milliseconds: 1100), () {
       setState(() {
         selected3 = !selected3;
       });
     });
-    Future.delayed(Duration(milliseconds: 2300), () {
+    Future.delayed(Duration(milliseconds: 2000), () {
       setState(() {
         selected3 = !selected3;
       });
@@ -61,9 +61,9 @@ class _LoginLoaderState extends State<LoginLoader> {
   }
 
   void _navigateToHome() async {
-    await Future.delayed(Duration(milliseconds: 3400));
-    // Navigator.of(context)
-    //    .pushReplacement(MaterialPageRoute(builder: (context) => Home()));
+    await Future.delayed(Duration(milliseconds: 2700));
+    Navigator.of(context)
+        .pushReplacement(MaterialPageRoute(builder: (context) => Home()));
   }
 
   @override
@@ -74,7 +74,7 @@ class _LoginLoaderState extends State<LoginLoader> {
       body: Stack(
         children: [
           Opacity(
-            opacity: 0.2,
+            opacity: 0.28,
             child: CircularParticle(
               connectDots: true,
               speedOfParticles: 0.7,

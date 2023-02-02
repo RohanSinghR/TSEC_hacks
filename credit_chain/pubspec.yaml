@@ -62,7 +62,10 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
   - assets/images/credit-chain-high-resolution-logo-color-on-transparent-background.png
-  #- images/a_dot_ham.jpeg
+  - assets/images/coinbase-inc-seeklogo.com.png
+  - assets/images/MetaMask_Fox.png
+  - assets/images/binance-logo.png
+  - assets/images/contract-icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
