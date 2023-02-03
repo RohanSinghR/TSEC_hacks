@@ -46,7 +46,7 @@ class _LoginState extends State<Login> {
                 opacity: opac2,
                 duration: Duration(milliseconds: 1200),
                 child: Opacity(
-                  opacity: 0.4,
+                  opacity: 0.7,
                   child: CircularParticle(
                     height: 320,
                     particleColor: Colors.lightBlue,
@@ -94,9 +94,9 @@ class _LoginState extends State<Login> {
                         helperText: 'Wallet address',
                         hintText: 'Enter wallet address',
                         errorText: controller1.text.isEmpty
-                            ? 'Please enter a valid wallet address'
+                            ? 'This is a required field'
                             : '',
-                        errorStyle: TextStyle(color: Colors.red),
+                        errorStyle: TextStyle(color: Colors.yellow),
                         alignLabelWithHint: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
@@ -119,9 +119,9 @@ class _LoginState extends State<Login> {
                         hintText: 'Enter wallet key',
                         hintMaxLines: 1,
                         errorText: controller2.text.isEmpty
-                            ? 'Please enter a valid wallet key'
+                            ? 'This is a required field'
                             : '',
-                        errorStyle: TextStyle(color: Colors.red),
+                        errorStyle: TextStyle(color: Colors.yellow),
                         alignLabelWithHint: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
